@@ -8,6 +8,20 @@ export default class App {
         return suma;
       }
 
+      sumatoriaSerieDos(numero){
+          let suma = 0;
+          let i = 1;
+          while (i <= numero) {
+              if (i % 2 === 0){
+                  suma += 1 / i;
+              }else {
+                  suma -= 1 / i;
+              }
+              i += 1;
+          }
+          return suma;
+      }
+
 
 
 }
@@ -15,3 +29,6 @@ let app = new App();
 
 console.log(app.sumatoriaSerieUno(6));
 console.log(app.sumatoriaSerieUno(8));
+
+console.log(app.sumatoriaSerieDos(6));
+console.log(app.sumatoriaSerieDos(6));
