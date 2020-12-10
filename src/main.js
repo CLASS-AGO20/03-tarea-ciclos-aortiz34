@@ -43,7 +43,7 @@ export default class App {
           let i = inicio;
           do {
               if (i % 3 === 0){
-                  resultado += `${i}, `;
+                  resultado += `${i}`;
               }
               i += 1;
           } while (i <= fin);
@@ -62,7 +62,7 @@ export default class App {
           i = numero2;
           for (i; i >= numero1 ; i--) {
             if (i % 2 !== 0){
-                resultado += `${i}, `
+                resultado += `${i},`
             }
           }
           return resultado;
