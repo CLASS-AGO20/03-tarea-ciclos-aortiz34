@@ -23,15 +23,48 @@ export default class App {
       }
 
       esPrimo(numero){
-          let resultado;
+          let i = 1;
+          let suma = 0;
           do {
-              if (numero % 2 !== 0 && numero % 3 !== 0){
-                resultado = true;
-              }else{
-                resultado = false;
+              if (numero % i === 0){
+                suma += 1;
               }
-              break;
-          } while (numero % 1 === 0 && numero % numero === 0);
+              i++;
+          } while (i <= numero);
+          if (suma === 2){
+            return true;
+        }else{
+            return false;
+        }
+      }
+
+      obtenerMultiplos(inicio, fin){
+          let resultado = ``;
+          let i = inicio;
+          do {
+              if (i % 3 === 0){
+                  resultado += `${i}, `;
+              }
+              i += 1;
+          } while (i <= fin);
+          return resultado;
+      }
+
+      obtenerImpares(numero1, numero2){
+          let resultado = ``;
+          let q = 0;
+          let i;
+          if (numero1 > numero2){
+            q = numero1;
+            numero1 = numero2;
+            numero2 = q;
+          }
+          i = numero2;
+          for (i; i >= numero1 ; i--) {
+            if (i % 2 !== 0){
+                resultado += `${i}, `
+            }
+          }
           return resultado;
       }
 
@@ -47,3 +80,8 @@ console.log(app.sumatoriaSerieDos(1));
 console.log(app.esPrimo(5));
 console.log(app.esPrimo(7));
 console.log(app.esPrimo(9));
+
+console.log(app.obtenerMultiplos(10,25));
+
+console.log(app.obtenerImpares(5,10));
+
