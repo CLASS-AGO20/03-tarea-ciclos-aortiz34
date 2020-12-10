@@ -62,7 +62,11 @@ export default class App {
           i = numero2;
           for (i; i >= numero1 ; i--) {
             if (i % 2 !== 0){
-                resultado += `${i},`
+                if (resultado == ``){
+                    resultado += `${i}`;
+                }else{
+                    resultado += `,${i}`;
+                }
             }
           }
           return resultado;
